@@ -1,0 +1,85 @@
+{
+    "name": "SmartResponder",
+    "operations": {
+        "unsubscribe": {
+            "httpMethod": "POST",
+            "uri": "subscribers.html",
+            "summary": "Delete user from subscription list",
+            "parameters": {
+                "action": {
+                    "location": "postField",
+                    "default": "unlink_with_delivery"
+                },
+                "delivery_id": {
+                    "location": "postField",
+                    "required": true
+                },
+                "search": {
+                    "location": "postField",
+                    "required": true,
+                    "type": "array"
+                }
+                "api_key": {
+                    "location": "postField",
+                    "required": true
+                }
+            }
+        },
+
+        "subscribe": {
+            "httpMethod": "POST",
+            "uri": "subscribers.html",
+            "summary": "Subscribe user to list",
+            "parameters": {
+                "action": {
+                    "location": "postField",
+                    "default": "create",
+                    "static": true
+                },
+                "format":{
+                    "location": "postField",
+                    "default": "json"
+                },
+                "api_key": {
+                    "location": "postField",
+                    "required": true
+                },
+                "delivery_id": {
+                    "location": "postField",
+                    "required": true
+                },
+                "email": {
+                    "location": "postField",
+                    "required": true
+                },
+                "first_name": {
+                    "location": "postField"
+                },
+                "last_name": {
+                    "location": "postField"
+                }
+            }
+        },
+
+        "getLists":{
+            "httpMethod": "POST",
+            "uri": "deliveries.html",
+            "summary": "Get subscription lists",
+            "parameters": {
+                "action": {
+                    "location": "postField",
+                    "default": "list",
+                    "static": true
+                },
+                "format":{
+                    "location": "postField",
+                    "default": "json"
+                },
+                "api_key": {
+                    "location": "postField",
+                    "required": true
+                }
+            }
+        }
+    }
+}
